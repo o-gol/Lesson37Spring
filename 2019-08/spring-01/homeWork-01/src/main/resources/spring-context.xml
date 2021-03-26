@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- TODO: определите бины здесь -->
+
+    <bean id="csvReader" class="ru.otus.spring01.services.CSVReadServices">
+        <constructor-arg name="path" value="D:\\Java\\[OTUS] Разработчик на Spring Framework\\Lesson37Spring\\2019-08\\spring-01\\homeWork-01\\src\\main\\resources\\questions.csv"/>
+    </bean>
+
+    <bean id="testingServices" class="ru.otus.spring01.services.TestingServices">
+        <constructor-arg name="csvReadServices" ref="csvReader"/>
+    </bean>
+
+
+
+</beans>

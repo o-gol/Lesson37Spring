@@ -5,4 +5,19 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- TODO: определите бины здесь -->
+
+
+    <bean id="personDAO" class="ru.otus.ru.otus.spring01.dao.PersonDaoSimple">
+        <property name="defaultAge" value="24"/>
+    </bean>
+    <bean id="personServices" class="ru.otus.ru.otus.spring01.service.PersonServiceImpl">
+<!--        <constructor-arg name="dao" ref="personDAO"/>-->
+        <property name="dao" ref="personDAO"/>
+    </bean>
+    <bean id ="person" class="ru.otus.ru.otus.spring01.domain.Person">
+        <constructor-arg name="name" value="John"/>
+        <constructor-arg name="age" value="14"/>
+    </bean>
+
+
 </beans>
